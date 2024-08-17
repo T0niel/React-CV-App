@@ -1,3 +1,4 @@
+import FieldInput from './FieldInput';
 import InputCard from './InputCard';
 import { useState } from 'react';
 
@@ -44,22 +45,17 @@ function NameInput({ onSubmit, labelText }) {
 
   return (
     <InputCard>
-      <div className="flex flex-col justify-center  min-h-[100vh] tablet:min-h-0 p-4 gap-2 text-center h-ful">
-        <label htmlFor="input" className="text-2xl rounded">
-          {labelText}
-        </label>
+      <FieldInput labelText={labelText} errorMessage={errorMessage} submit={submit}>
         <input
           type="text"
-          placeholder="First name"
+          placeholder={labelText}
           id="input"
           className={`border-2 h-10 bg-transparent p-1 focus:outline-none ${
             errorMessage ? 'border-b-red-500' : 'border-b-green-400'
           }`}
           onChange={onChange}
         ></input>
-        <p className="text-red-600 animate-pulse">{errorMessage}</p>
-        <button onClick={submit} className='bg-green-500 p-2 text-white rounded opacity-85 hover:opacity-100 transition-opacity ' >Submit</button>
-      </div>
+      </FieldInput>
     </InputCard>
   );
 }

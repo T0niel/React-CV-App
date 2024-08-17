@@ -21,7 +21,7 @@ export default {
         }
       },
       animation: {
-        slideDown: 'slideDown 1s ease-in'
+        slideDown: 'slideDown 900ms ease-in'
       }
     },
   },
