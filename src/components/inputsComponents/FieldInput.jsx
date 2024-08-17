@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 function FieldInput({labelText, children, errorMessage, submit}){
   return (
-    <div className="flex flex-col justify-center  min-h-[100vh] tablet:min-h-0 p-4 gap-2 text-center h-ful">
+    <div className="flex flex-col justify-center min-h-[100vh] tablet:min-h-0 p-4 gap-2 text-center h-ful">
       <label htmlFor="input" className="text-2xl rounded">
         {labelText}
       </label>

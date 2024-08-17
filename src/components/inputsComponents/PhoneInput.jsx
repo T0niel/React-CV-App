@@ -1,18 +1,19 @@
 import FieldInput from './FieldInput';
-import InputCard from './InputCard';
+import InputCard from '../InputCard';
 import { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
-function EmailInput({ onSubmit, labelText }) {
-  const [errorMessage, setErrorMessage] = useState('Please enter your input');
+function PhoneInput({ onSubmit, labelText }) {
+  const [errorMessage, setErrorMessage] = useState('');
   const [value, setValue] = useState(null);
 
   function onChange(e) {
     const data = e.target.value;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\+?[1-9]\d{1,14}$/;
 
-    if (!emailPattern.test(data)) {
-      setErrorMessage('does not match the email schema');
+    //Because its optional we can ignore if data is empty
+    if (!phonePattern.test(data) && data !== '') {
+      setErrorMessage('Not a valid phone number');
       return;
     }
 
@@ -36,12 +37,9 @@ function EmailInput({ onSubmit, labelText }) {
         submit={submit}
       >
         <input
-          type="email"
-          placeholder="user@domain.com"
+          type="tel"
+          placeholder="+1234567890"
           id="input"
-          className={`border-2 h-10 bg-transparent p-1 focus:outline-none ${
-            errorMessage ? 'border-b-red-500' : 'border-b-green-400'
-          }`}
           onChange={onChange}
         ></input>
       </FieldInput>
@@ -49,4 +47,4 @@ function EmailInput({ onSubmit, labelText }) {
   );
 }
 
-export default EmailInput;
+export default PhoneInput;

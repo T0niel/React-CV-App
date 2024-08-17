@@ -1,5 +1,5 @@
 import FieldInput from './FieldInput';
-import InputCard from './InputCard';
+import InputCard from '../InputCard';
 import { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
@@ -16,13 +16,13 @@ function NameInput({ onSubmit, labelText }) {
       return;
     }
 
-    if(data.length === 0){
-        setErrorMessage('Please enter your input');
+    if (data.length === 0) {
+      setErrorMessage('Please enter your input');
     }
 
-    if(data.length <= 3){
-        setErrorMessage('The name should have more than 3 characters')
-        return;
+    if (data.length <= 3) {
+      setErrorMessage('The name should have more than 3 characters');
+      return;
     }
 
     //First letter not capitalized
@@ -30,22 +30,26 @@ function NameInput({ onSubmit, labelText }) {
       setErrorMessage('The first letter is not capitalized');
       return;
     }
-    
+
     setValue(data);
     setErrorMessage('');
   }
 
-  function submit(){
-    if(errorMessage){
-        return;
+  function submit() {
+    if (errorMessage) {
+      return;
     }
 
-    onSubmit({[labelText]: value});
+    onSubmit({ [labelText]: value });
   }
 
   return (
     <InputCard>
-      <FieldInput labelText={labelText} errorMessage={errorMessage} submit={submit}>
+      <FieldInput
+        labelText={labelText}
+        errorMessage={errorMessage}
+        submit={submit}
+      >
         <input
           type="text"
           placeholder={labelText}
