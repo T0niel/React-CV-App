@@ -13,21 +13,21 @@ function UserInput({ onSubmit }) {
 
   const inputs = [
     <NameInput
-    labelText="First Name*"
-    key="firstNameInput"
-    onSubmit={onInputSubmit}
+      labelText="First Name*"
+      key="firstNameInput"
+      onSubmit={onInputSubmit}
     />,
     <NameInput
-    labelText="Last Name*"
-    key="LastNameInput"
-    onSubmit={onInputSubmit}
+      labelText="Last Name*"
+      key="LastNameInput"
+      onSubmit={onInputSubmit}
     />,
     <EmailInput labelText="Email*" key="Email" onSubmit={onInputSubmit} />,
     <BirthInput labelText="Birth*" key="Birth" onSubmit={onInputSubmit} />,
     <PhoneInput labelText="Phone" key="Phone" onSubmit={onInputSubmit} />,
-    <EducationInput key='Education' onSubmit={onInputSubmit}/>,
-    <SkillsInput key='Skills' onSubmit={onInputSubmit}/>,
-    <HobbiesInput key='Hobbies' onSubmit={onInputSubmit}/>
+    <EducationInput key="Education" onSubmit={onInputSubmit} />,
+    <SkillsInput key="Skills" onSubmit={onInputSubmit} />,
+    <HobbiesInput key="Hobbies" onSubmit={onInputSubmit} />,
   ];
 
   if (currentInput >= inputs.length) {
