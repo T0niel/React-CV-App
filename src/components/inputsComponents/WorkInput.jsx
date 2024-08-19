@@ -86,9 +86,9 @@ function WorkInput({ onSubmit }) {
           <p className="text-red-500 text-center">{validate().description}</p>
           <button
             aria-label="add work"
-            className="ml-auto block bg-green-500 opacity-90 text-white w-10 h-10 rounded hover:opacity-100 transition-opacity"
+            className="ml-auto block bg-blue-500 opacity-90 text-white w-10 h-10 rounded hover:opacity-100 transition-opacity"
             onClick={() => {
-              if (validate().pass) {
+              if (validate().pass && title !== '' && description !== '') {
                 addWork(title, description);
                 setTitle('');
                 setDescription('');

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import InputCard from '../InputCard';
 
-let first = true;
 // eslint-disable-next-line react/prop-types
 function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
   const [list, setList] = useState([]);
@@ -13,7 +12,7 @@ function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
     error = 'Already added that';
   }
 
-  if (!first && value === '') {
+  if (!optional && value === '') {
     error = 'Please enter your input';
   }
 
@@ -21,7 +20,6 @@ function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
     setList([...list, input]);
   }
 
-  first = false;
   return (
     <InputCard>
       <div className="p-2 min-h-[100vh] tablet:min-h-0 flex flex-col justify-center">
@@ -36,7 +34,7 @@ function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
           <ul>
             {list.map((item) => (
               <li
-                key={item}
+                key={item.title + item.description}
                 className="flex items-center p-2 bg-gray-100 border-b-2 border-white"
               >
                 <p>{item}</p>
@@ -69,7 +67,7 @@ function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
             aria-label={`Add ${labelName}`}
             className="bg-blue-500 p-2 text-white rounded opacity-85 hover:opacity-100 transition-opacity w-[100%] mobile:w-[8%]"
             onClick={() => {
-              if (error === '') {
+              if (error === '' && value !== '') {
                 addInput(value);
                 setValue('');
               }
