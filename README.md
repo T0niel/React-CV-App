@@ -1,1 +1,1 @@
-https://elton-cv-generator.netlify.app/
+https://react-cv-app-vert.vercel.app/
