@@ -31,6 +31,7 @@ function EmailInput({ onSubmit, labelText }) {
   return (
     <InputCard>
       <FieldInput
+        optional={false}
         labelText={labelText}
         errorMessage={errorMessage}
         submit={submit}

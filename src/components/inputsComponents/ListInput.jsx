@@ -3,7 +3,7 @@ import InputCard from '../InputCard';
 
 let first = true;
 // eslint-disable-next-line react/prop-types
-function ListInput({ onSubmit, labelName, exampleUseCase }) {
+function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
   const [list, setList] = useState([]);
   const [value, setValue] = useState('');
 
@@ -25,10 +25,13 @@ function ListInput({ onSubmit, labelName, exampleUseCase }) {
   return (
     <InputCard>
       <div className="p-2 min-h-[100vh] tablet:min-h-0 flex flex-col justify-center">
-        <h1 className="text-2xl text-center p-3">{labelName}</h1>
+        <h1 className="text-2xl text-center p-3">
+          {labelName}{' '}
+          <span className="text-gray-500">{optional ? '(optional)' : '*'}</span>
+        </h1>
         <div className="mb-2">
           <h1 className={list.length && 'border-b-2 pt-2'}>
-            {list.length ? labelName : ''}
+            {list.length ? labelName : ''}{' '}
           </h1>
           <ul>
             {list.map((item) => (
@@ -79,7 +82,9 @@ function ListInput({ onSubmit, labelName, exampleUseCase }) {
         <button
           className="bg-green-500 p-2 text-white rounded opacity-85 hover:opacity-100 transition-opacity mt-3 ml-auto block"
           onClick={() => {
-            onSubmit({ [labelName]: list });
+            if (list.length !== 0 || optional) {
+              onSubmit({ [labelName]: list });
+            }
           }}
         >
           Submit

@@ -40,11 +40,19 @@ function BirthInput({ onSubmit, labelText }) {
   return (
     <InputCard>
       <FieldInput
+        optional={false}
         labelText={labelText}
         errorMessage={errorMessage}
         submit={submit}
       >
-        <input type="date" id="input" onChange={onChange}></input>
+        <input
+          type="date"
+          id="input"
+          onChange={onChange}
+          className={`border-2 h-10 bg-transparent p-1 focus:outline-none ${
+            errorMessage ? 'border-b-red-500' : 'border-b-green-400'
+          }`}
+        ></input>
       </FieldInput>
     </InputCard>
   );

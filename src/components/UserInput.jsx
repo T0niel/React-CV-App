@@ -6,6 +6,9 @@ import PhoneInput from './inputsComponents/PhoneInput';
 import EducationInput from './inputsComponents/EducationInput';
 import SkillsInput from './inputsComponents/SkillsInput';
 import HobbiesInput from './inputsComponents/HobbiesInput';
+import WorkInput from './inputsComponents/WorkInput';
+
+
 // eslint-disable-next-line react/prop-types
 function UserInput({ onSubmit }) {
   const [currentInput, setCurrentInput] = useState(0);
@@ -13,21 +16,22 @@ function UserInput({ onSubmit }) {
 
   const inputs = [
     <NameInput
-      labelText="First Name*"
+      labelText="First Name"
       key="firstNameInput"
       onSubmit={onInputSubmit}
     />,
     <NameInput
-      labelText="Last Name*"
+      labelText="Last Name"
       key="LastNameInput"
       onSubmit={onInputSubmit}
     />,
-    <EmailInput labelText="Email*" key="Email" onSubmit={onInputSubmit} />,
-    <BirthInput labelText="Birth*" key="Birth" onSubmit={onInputSubmit} />,
+    <EmailInput labelText="Email" key="Email" onSubmit={onInputSubmit} />,
+    <BirthInput labelText="Birth" key="Birth" onSubmit={onInputSubmit} />,
     <PhoneInput labelText="Phone" key="Phone" onSubmit={onInputSubmit} />,
     <EducationInput key="Education" onSubmit={onInputSubmit} />,
     <SkillsInput key="Skills" onSubmit={onInputSubmit} />,
     <HobbiesInput key="Hobbies" onSubmit={onInputSubmit} />,
+    <WorkInput key='Work' onSubmit={onInputSubmit}/>
   ];
 
   if (currentInput >= inputs.length) {

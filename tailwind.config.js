@@ -10,20 +10,23 @@ export default {
         desktop: '1280px',
       },
       keyframes: {
-        slideDown: {
+        pop: {
           '0%': {
             opacity: '0',
-            transform: 'translateY(-1000px)'
+            transform: 'scale(.50)',
+          },
+          '50%': {
+            transform: 'scale(1.05)',
           },
           '100%': {
             opacity: '1',
-            transform: 'translateY(0px)'
-          }
-        }
+            transform: 'scale(1)',
+          },
+        },
       },
       animation: {
-        slideDown: 'slideDown 900ms ease-in'
-      }
+        pop: 'pop 500ms ease-in',
+      },
     },
   },
   plugins: [],

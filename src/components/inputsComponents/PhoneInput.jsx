@@ -5,7 +5,7 @@ import { useState } from 'react';
 // eslint-disable-next-line react/prop-types
 function PhoneInput({ onSubmit, labelText }) {
   const [errorMessage, setErrorMessage] = useState('');
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState('');
 
   function onChange(e) {
     const data = e.target.value;
@@ -32,6 +32,7 @@ function PhoneInput({ onSubmit, labelText }) {
   return (
     <InputCard>
       <FieldInput
+        optional={true}
         labelText={labelText}
         errorMessage={errorMessage}
         submit={submit}
@@ -40,6 +41,9 @@ function PhoneInput({ onSubmit, labelText }) {
           type="tel"
           placeholder="+1234567890"
           id="input"
+          className={`border-2 h-10 bg-transparent p-1 focus:outline-none ${
+            value !== '' && (errorMessage ? 'border-b-red-500' : 'border-b-green-400')
+          }`}
           onChange={onChange}
         ></input>
       </FieldInput>
