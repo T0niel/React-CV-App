@@ -28,7 +28,7 @@ export default {
         pop: 'pop 500ms ease-in',
       },
       backgroundImage: {
-        'hero-pattern': "url('../public/waveLight.svg')",
+        'hero-pattern': "url('../public/wave.svg')",
       },
       backgroundRepeat: {
         'no-repeat': 'no-repeat', // You can add other values as needed
