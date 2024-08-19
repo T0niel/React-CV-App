@@ -26,13 +26,13 @@ function PhoneInput({ onSubmit, labelText }) {
       return;
     }
 
-    onSubmit({ [labelText]: value });
+    onSubmit({ 'phone': value });
   }
 
   return (
     <InputCard>
       <FieldInput
-        optional={true}
+        optional={false}
         labelText={labelText}
         errorMessage={errorMessage}
         submit={submit}
@@ -42,7 +42,8 @@ function PhoneInput({ onSubmit, labelText }) {
           placeholder="+1234567890"
           id="input"
           className={`border-2 h-10 bg-transparent p-1 focus:outline-none ${
-            value !== '' && (errorMessage ? 'border-b-red-500' : 'border-b-green-400')
+            value !== '' &&
+            (errorMessage ? 'border-b-red-500' : 'border-b-green-400')
           }`}
           onChange={onChange}
         ></input>

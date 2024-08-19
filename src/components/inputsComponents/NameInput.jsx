@@ -3,7 +3,7 @@ import InputCard from '../InputCard';
 import { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
-function NameInput({ onSubmit, labelText }) {
+function NameInput({ onSubmit, labelText, firstName = true }) {
   const [errorMessage, setErrorMessage] = useState('Please enter your input');
   const [value, setValue] = useState(null);
 
@@ -40,7 +40,7 @@ function NameInput({ onSubmit, labelText }) {
       return;
     }
 
-    onSubmit({ [labelText]: value });
+    onSubmit({ [firstName ? 'fName' : 'lName']: value });
   }
 
   return (

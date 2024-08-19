@@ -35,7 +35,7 @@ function WorkInput({ onSubmit }) {
   }
 
   function submit(){
-    onSubmit({'Work': list});
+    onSubmit({'work': list});
   }
 
   function addWork(title, description) {

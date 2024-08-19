@@ -24,6 +24,7 @@ function UserInput({ onSubmit }) {
       labelText="Last Name"
       key="LastNameInput"
       onSubmit={onInputSubmit}
+      firstName={false}
     />,
     <EmailInput labelText="Email" key="Email" onSubmit={onInputSubmit} />,
     <BirthInput labelText="Birth" key="Birth" onSubmit={onInputSubmit} />,

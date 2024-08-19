@@ -2,7 +2,7 @@ import { useState } from 'react';
 import InputCard from '../InputCard';
 
 // eslint-disable-next-line react/prop-types
-function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
+function ListInput({ onSubmit, labelName, exampleUseCase, dataName, optional = true }) {
   const [list, setList] = useState([]);
   const [value, setValue] = useState('');
 
@@ -81,7 +81,7 @@ function ListInput({ onSubmit, labelName, exampleUseCase, optional = true }) {
           className="bg-green-500 p-2 text-white rounded opacity-85 hover:opacity-100 transition-opacity mt-3 ml-auto block"
           onClick={() => {
             if (list.length !== 0 || optional) {
-              onSubmit({ [labelName]: list });
+              onSubmit({ [dataName]: list });
             }
           }}
         >

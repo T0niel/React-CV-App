@@ -6,6 +6,8 @@ function SkillsInput({ onSubmit }) {
       onSubmit={onSubmit}
       labelName="Skills"
       exampleUseCase="Communication, Teamwork..."
+      dataName="skills"
+      optional={false}
     />
   );
 }

@@ -25,7 +25,7 @@ function EmailInput({ onSubmit, labelText }) {
       return;
     }
 
-    onSubmit({ [labelText]: value });
+    onSubmit({'email': value });
   }
 
   return (

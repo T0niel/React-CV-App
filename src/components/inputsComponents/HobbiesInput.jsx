@@ -4,8 +4,9 @@ function HobbiesInput({ onSubmit }) {
   return (
     <ListInput
       onSubmit={onSubmit}
-      labelName="hobbies"
+      labelName="Hobbies"
       exampleUseCase="Drawing, Stargazing..."
+      dataName="hobbies"
     />
   );
 }

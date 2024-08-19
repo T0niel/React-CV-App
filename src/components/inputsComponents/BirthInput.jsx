@@ -34,7 +34,7 @@ function BirthInput({ onSubmit, labelText }) {
       return;
     }
 
-    onSubmit({ [labelText]: value });
+    onSubmit({ 'birth': value });
   }
 
   return (
